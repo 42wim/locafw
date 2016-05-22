@@ -1,17 +1,21 @@
 web:
-    listen: ":8888"
+    listen: ":8888" #ip and port to listen on
+#list of your cisco WLC's, need public commmunity and snmp v2c
 controllers:
     - 192.168.1.1
     - 192.168.1.2
+#ipset configuration, name of the set and TTL of the entries
 ipset:
     name: locafw
     timeout: 1500
+#ACLs, name is the name of your AP's (can be a regexp)
+#dstip are the destination addresses that are allowed to be accessed from the specified AP
 acl:
-- name: lwap-11401-01C92
+- name: lwap-buildingA-1
   dstip:
   - 10.0.0.5
   - 10.0.0.6
-- name: "lwap-47901-04197-*"
+- name: "lwap-buildingB-*"
   dstip:
   - 1.4.5.7
   - 2.4.5.7
