@@ -1,0 +1,17 @@
+web:
+    listen: ":8888"
+controllers:
+    - 192.168.1.1
+    - 192.168.1.2
+ipset:
+    name: locafw
+    timeout: 1500
+acl:
+- name: lwap-11401-01C92
+  dstip:
+  - 10.0.0.5
+  - 10.0.0.6
+- name: "lwap-47901-04197-*"
+  dstip:
+  - 1.4.5.7
+  - 2.4.5.7
